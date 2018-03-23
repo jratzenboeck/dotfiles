@@ -38,9 +38,9 @@ setup_gitconfig () {
       git_credential='osxkeychain'
     fi
 
-    user ' - What is your github author name?'
+    user ' - What is your git author name?'
     read -e git_authorname
-    user ' - What is your github author email?'
+    user ' - What is your git author email?'
     read -e git_authoremail
 
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
@@ -137,6 +137,18 @@ install_dotfiles () {
   done
 }
 
+install_ohmyzsh () {
+  # Set the default shell to zsh if it isn't currently set to zsh
+  if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+    chsh -s $(which zsh)
+  fi
+  # Install Oh My Zsh if it isn't already present
+  if [[ ! -d $HOME/oh-my-zsh/ ]]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  fi
+}
+
+install_ohmyzsh
 setup_gitconfig
 install_dotfiles
 

@@ -31,3 +31,7 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true

@@ -21,6 +21,7 @@ brew 'htop'
 brew 'z'
 brew 'wget'
 brew 'php'
+brew 'nginx'
 
 cask 'firefox'
 cask 'google-chrome'

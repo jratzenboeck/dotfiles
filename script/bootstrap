@@ -148,7 +148,7 @@ install_ohmyzsh () {
   fi
 }
 
-install_ohmyzsh
+#install_ohmyzsh
 setup_gitconfig
 install_dotfiles
 

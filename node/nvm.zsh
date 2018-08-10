@@ -1,5 +1,5 @@
 # initialized nvm
-source /usr/local/opt/nvm//nvm.sh
+source /usr/local/opt/nvm/nvm.sh
 
 # load desired node version
 autoload -U add-zsh-hook
